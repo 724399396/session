@@ -1,0 +1,123 @@
+* 不规则图形面积计算
+** 土壤项目
+   [[./grid-show-case.png]]
+** Polygon Triangulation(多边形三角化)
+   [[./1.png]]
+   
+   [[./2.png]]
+*** step
+    [[./3.png]]
+    [[./4.png]]
+    [[./5.png]]
+
+*** counter clockwise convex vertex
+    #+BEGIN_SRC scala
+    def isConvexVertexOnCounterClockWise(start: Vertex, middle: Vertex, end: Vertex): Boolean = {
+      (middle.x - start.x) * (end.y - middle.y) - (end.x - middle.x) * (middle.y - start.y) > 0
+    }
+    #+END_SRC
+*** counter clockwise
+    #+BEGIN_SRC scala
+  def counterClockwiseOrder(polygon: Polygon):Polygon = {
+    val edgesSum = getEdges(polygon).map{
+      case Edge(Vertex(ax,ay), Vertex(bx,by)) =>
+        (bx-ax)*(by+ay)
+    }.sum
+    if (edgesSum > 0)
+      polygon.reverse
+    else
+      polygon
+  }
+    #+END_SRC
+** tools
+*** JTS lib
+    [[https://github.com/locationtech/jts]]
+*** GoeGebra
+    [[https://www.geogebra.org/]]
+* Git
+  [[./before-init.png]]
+  #+BEGIN_SRC bash
+  mkdir git-example
+  cd git-example
+  git init
+  #+END_SRC
+  [[./after-init.png]]
+
+  [[./after-init-tree.png]]
+  #+BEGIN_SRC bash
+  echo Hello World > some.txt
+  git status
+  #+END_SRC
+  [[./touch-status.png]]
+  #+BEGIN_SRC bash
+  git add some.txt
+  git status
+  git cat-file -t 557db03de997c86a4a028e1ebd3a1ceb225be238
+  git cat-file -p 557db03de997c86a4a028e1ebd3a1ceb225be238
+  #+END_SRC
+  [[./after-add.png]]
+
+  [[./after-add-tree.png]]
+
+  [[./git-cat-file-blob.png]]
+
+  #+BEGIN_SRC bash
+  git commit -m "first commit"
+  git status
+  #+END_SRC
+  [[./after-commit.png]]
+
+  [[./after-commit-tree.png]]
+
+  [[./after-commit-cat.png]]
+
+  #+BEGIN_SRC bash
+  git checkout -b test-branch
+  #+END_SRC
+
+  [[./check-branch.png]]
+
+  [[./check-branch-tree.png]]
+
+  [[./cat-ref.png]]
+
+  #+BEGIN_SRC bash
+  echo second commit from a >> some.txt
+  git add some.txt
+  git commit -m "second commit from a"
+  git checkout master
+  echo second commit from b >> some.txt
+  git add some.txt
+  git commit -m "second commit from b"
+  git branch master-backup
+  #+END_SRC
+
+  [[./before-merge-rebase.png]]
+
+
+  #+BEGIN_SRC bash
+  git merge test-branch
+  git add some.txt
+  git commit
+  #+END_SRC
+  [[./conflict.png]]
+
+  [[./conflict-content.png]]
+
+  [[./merge-tree.png]]
+
+  [[./merge-log.png]]
+
+  #+BEGIN_SRC bash
+  git checkout master-backup
+  git rebase test-branch
+  git add some.txt
+  git rebase --continue
+  git commit
+  #+END_SRC
+
+  [[./rebase.png]]
+
+  [[./rebase-cat.png]]
+
+  [[./rebase-cat-2.png]]

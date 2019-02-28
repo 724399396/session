@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-02-27 Wed 21:22 -->
+<!-- 2019-02-28 四 09:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -246,34 +246,35 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge5bc010">1. 不规则图形面积计算</a>
+<li><a href="#orgea6e8e4">1. 不规则图形面积计算</a>
 <ul>
-<li><a href="#org3be86a2">1.1. 土壤项目</a></li>
-<li><a href="#org1e6f717">1.2. Polygon Triangulation(多边形三角化)</a>
+<li><a href="#org6fd8cf8">1.1. 土壤项目</a></li>
+<li><a href="#orgbb81713">1.2. Polygon Triangulation(多边形三角化)</a>
 <ul>
-<li><a href="#orgf5936d5">1.2.1. step</a></li>
-<li><a href="#orgca40b32">1.2.2. counter clockwise convex vertex</a></li>
-<li><a href="#org2887e53">1.2.3. counter clockwise</a></li>
+<li><a href="#org30e7105">1.2.1. step</a></li>
+<li><a href="#orgd385cfd">1.2.2. counter clockwise convex vertex</a></li>
+<li><a href="#org527abaf">1.2.3. counter clockwise</a></li>
 </ul>
 </li>
-<li><a href="#org9ee8097">1.3. tools</a>
+<li><a href="#org642433d">1.3. tools</a>
 <ul>
-<li><a href="#org35c8507">1.3.1. JTS lib</a></li>
-<li><a href="#org87498f1">1.3.2. GoeGebra</a></li>
+<li><a href="#org9254c86">1.3.1. JTS lib</a></li>
+<li><a href="#org28fae49">1.3.2. GoeGebra</a></li>
 </ul>
 </li>
+<li><a href="#org43f2826">1.4. More</a></li>
 </ul>
 </li>
-<li><a href="#org5057302">2. Git</a></li>
+<li><a href="#org221ce22">2. Git</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge5bc010" class="outline-2">
-<h2 id="orge5bc010"><span class="section-number-2">1</span> 不规则图形面积计算</h2>
+<div id="outline-container-orgea6e8e4" class="outline-2">
+<h2 id="orgea6e8e4"><span class="section-number-2">1</span> 不规则图形面积计算</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org3be86a2" class="outline-3">
-<h3 id="org3be86a2"><span class="section-number-3">1.1</span> 土壤项目</h3>
+<div id="outline-container-org6fd8cf8" class="outline-3">
+<h3 id="org6fd8cf8"><span class="section-number-3">1.1</span> 土壤项目</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <div class="figure">
@@ -282,8 +283,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-org1e6f717" class="outline-3">
-<h3 id="org1e6f717"><span class="section-number-3">1.2</span> Polygon Triangulation(多边形三角化)</h3>
+<div id="outline-container-orgbb81713" class="outline-3">
+<h3 id="orgbb81713"><span class="section-number-3">1.2</span> Polygon Triangulation(多边形三角化)</h3>
 <div class="outline-text-3" id="text-1-2">
 
 <div class="figure">
@@ -297,8 +298,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf5936d5" class="outline-4">
-<h4 id="orgf5936d5"><span class="section-number-4">1.2.1</span> step</h4>
+<div id="outline-container-org30e7105" class="outline-4">
+<h4 id="org30e7105"><span class="section-number-4">1.2.1</span> step</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 <img src="./3.png" alt="3.png" />
@@ -308,8 +309,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgca40b32" class="outline-4">
-<h4 id="orgca40b32"><span class="section-number-4">1.2.2</span> counter clockwise convex vertex</h4>
+<div id="outline-container-orgd385cfd" class="outline-4">
+<h4 id="orgd385cfd"><span class="section-number-4">1.2.2</span> counter clockwise convex vertex</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <div class="org-src-container">
 <pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">isConvexVertexOnCounterClockWise</span><span style="color: #4f97d7;">(</span>start<span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Vertex</span>, middle<span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Vertex</span>, end<span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Vertex</span><span style="color: #4f97d7;">)</span><span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Boolean</span> <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #4f97d7;">{</span>
@@ -319,8 +320,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-org2887e53" class="outline-4">
-<h4 id="org2887e53"><span class="section-number-4">1.2.3</span> counter clockwise</h4>
+<div id="outline-container-org527abaf" class="outline-4">
+<h4 id="org527abaf"><span class="section-number-4">1.2.3</span> counter clockwise</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <div class="org-src-container">
 <pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">counterClockwiseOrder</span><span style="color: #4f97d7;">(</span>polygon<span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Polygon</span><span style="color: #4f97d7;">)</span><span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Polygon</span> <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #4f97d7;">{</span>
@@ -338,20 +339,20 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-org9ee8097" class="outline-3">
-<h3 id="org9ee8097"><span class="section-number-3">1.3</span> tools</h3>
+<div id="outline-container-org642433d" class="outline-3">
+<h3 id="org642433d"><span class="section-number-3">1.3</span> tools</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org35c8507" class="outline-4">
-<h4 id="org35c8507"><span class="section-number-4">1.3.1</span> JTS lib</h4>
+<div id="outline-container-org9254c86" class="outline-4">
+<h4 id="org9254c86"><span class="section-number-4">1.3.1</span> JTS lib</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 <a href="https://github.com/locationtech/jts">https://github.com/locationtech/jts</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org87498f1" class="outline-4">
-<h4 id="org87498f1"><span class="section-number-4">1.3.2</span> GoeGebra</h4>
+<div id="outline-container-org28fae49" class="outline-4">
+<h4 id="org28fae49"><span class="section-number-4">1.3.2</span> GoeGebra</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 <a href="https://www.geogebra.org/">https://www.geogebra.org/</a>
@@ -359,9 +360,17 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
+<div id="outline-container-org43f2826" class="outline-3">
+<h3 id="org43f2826"><span class="section-number-3">1.4</span> More</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+TriangulationByEarClipping.pdf
+</p>
 </div>
-<div id="outline-container-org5057302" class="outline-2">
-<h2 id="org5057302"><span class="section-number-2">2</span> Git</h2>
+</div>
+</div>
+<div id="outline-container-org221ce22" class="outline-2">
+<h2 id="org221ce22"><span class="section-number-2">2</span> Git</h2>
 <div class="outline-text-2" id="text-2">
 
 <div class="figure">
@@ -541,12 +550,20 @@ git commit
 <p><img src="./rebase-cat-2.png" alt="rebase-cat-2.png" />
 </p>
 </div>
+
+<p>
+progit.pdf
+</p>
+
+<p>
+git pr
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: weili</p>
-<p class="date">Created: 2019-02-27 Wed 21:22</p>
+<p class="date">Created: 2019-02-28 四 09:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,31 +1,32 @@
 
 # Table of Contents
 
-1.  [不规则图形面积计算](#org680e95b)
-    1.  [土壤项目](#orgc4b1c30)
-    2.  [Polygon Triangulation(多边形三角化)](#org2202d8d)
-        1.  [step](#orgc16944d)
-        2.  [counter clockwise convex vertex](#org466bdf8)
-        3.  [counter clockwise](#org32cd2f2)
-    3.  [tools](#org40942aa)
-        1.  [JTS lib](#orgf245687)
-        2.  [GoeGebra](#org54b44b1)
-2.  [Git](#org23b661d)
+1.  [不规则图形面积计算](#org23e4d44)
+    1.  [土壤项目](#org7480881)
+    2.  [Polygon Triangulation(多边形三角化)](#org86c2fe2)
+        1.  [step](#orgc30b5bf)
+        2.  [counter clockwise convex vertex](#orgc87b64b)
+        3.  [counter clockwise](#org5999a8b)
+    3.  [tools](#org8454b6a)
+        1.  [JTS lib](#org96cdd3b)
+        2.  [GoeGebra](#orgf28ac73)
+    4.  [More](#org27dc5d7)
+2.  [Git](#org254d391)
 
 
-<a id="org680e95b"></a>
+<a id="org23e4d44"></a>
 
 # 不规则图形面积计算
 
 
-<a id="orgc4b1c30"></a>
+<a id="org7480881"></a>
 
 ## 土壤项目
 
 ![img](./grid-show-case.png)
 
 
-<a id="org2202d8d"></a>
+<a id="org86c2fe2"></a>
 
 ## Polygon Triangulation(多边形三角化)
 
@@ -34,7 +35,7 @@
 ![img](./2.png)
 
 
-<a id="orgc16944d"></a>
+<a id="orgc30b5bf"></a>
 
 ### step
 
@@ -43,7 +44,7 @@
 ![img](./5.png)
 
 
-<a id="org466bdf8"></a>
+<a id="orgc87b64b"></a>
 
 ### counter clockwise convex vertex
 
@@ -52,7 +53,7 @@
     }
 
 
-<a id="org32cd2f2"></a>
+<a id="org5999a8b"></a>
 
 ### counter clockwise
 
@@ -68,26 +69,33 @@
     }
 
 
-<a id="org40942aa"></a>
+<a id="org8454b6a"></a>
 
 ## tools
 
 
-<a id="orgf245687"></a>
+<a id="org96cdd3b"></a>
 
 ### JTS lib
 
 <https://github.com/locationtech/jts>
 
 
-<a id="org54b44b1"></a>
+<a id="orgf28ac73"></a>
 
 ### GoeGebra
 
 <https://www.geogebra.org/>
 
 
-<a id="org23b661d"></a>
+<a id="org27dc5d7"></a>
+
+## More
+
+TriangulationByEarClipping.pdf
+
+
+<a id="org254d391"></a>
 
 # Git
 
@@ -168,4 +176,8 @@
 ![img](./rebase-cat.png)
 
 ![img](./rebase-cat-2.png)
+
+progit.pdf
+
+git pr
 

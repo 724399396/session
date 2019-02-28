@@ -34,6 +34,8 @@
     [[https://github.com/locationtech/jts]]
 *** GoeGebra
     [[https://www.geogebra.org/]]
+** More
+   TriangulationByEarClipping.pdf
 * Git
   [[./before-init.png]]
   #+BEGIN_SRC bash
@@ -121,3 +123,7 @@
   [[./rebase-cat.png]]
 
   [[./rebase-cat-2.png]]
+
+  progit.pdf
+
+  git pr
